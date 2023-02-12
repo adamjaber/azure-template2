@@ -1,0 +1,18 @@
+# YAML template for Azure DevOps
+# Trigger the pipeline with a GitHub push or pull request.
+trigger:
+- master
+
+# Use a local machine as the agent.
+pool:
+  name: 'Default'
+
+# Run this job on a Windows environment.
+os: windows-latest
+
+steps:
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      Write-Host "Hello World"
